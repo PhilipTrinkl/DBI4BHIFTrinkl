@@ -1,0 +1,4 @@
+1.) Variable bei EF ist double -> defaultwert 0.0
+    Variable bei JPA ist Double -> defaultwert null (Double ist eine Abstrakte Klasse)
+2.) Weil bei double das Objekt Standardmäßig mit 0.0 initialisiert wird
+ 

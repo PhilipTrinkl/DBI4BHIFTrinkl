@@ -1,0 +1,19 @@
+1.) mit .HasForeignKey();
+2.) context.Person.AddAsync(newPerson);
+3.) context.saveChangesAsync();
+4.) var queryRes2 = await src
+                .GroupBy(p => p.IsAwesome)
+                .Select(g => new { Awesome = g.Key, Count = g.Count() })
+                .ToDictionaryAsync(t => t.Awesome, t => t.Count);
+5.) .Select und .Where:
+	var queryRes1 = await src
+                .Where(p => p.IsAwesome)
+                .SelectMany(p => p.Addresses)
+                .Select(a => a.City)
+                .Distinct()
+                .OrderBy(n => n)
+                .ToListAsync();
+    .Group by:
+	-> Query bei Frage 4
+6.) Selects, Where, OrderBy, Distinct, GroupBy, werden auf der Datenbank ausgeführt,
+    ToListAsync, ToDictinaryAsync in der Memory
